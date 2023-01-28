@@ -11,7 +11,7 @@ apply plugin: 'net.minecraftforge.gradle'
 
 version = '1.0.1'
 group = 'top.seraphjack'
-archivesBaseName = 'SimpleLogin-1.19.2'
+archivesBaseName = 'SimpleLogin-Kabu-1.19.2'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -100,7 +100,7 @@ tasks.jar.mustRunAfter(processResources)
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "SimpleLogin",
+                "Specification-Title"     : "SimpleLogin-Kabu",
                 "Specification-Vendor"    : "SeraphJACK",
                 "Specification-Version"   : "1",
                 "Implementation-Title"    : project.name,

@@ -1,5 +1,6 @@
 package top.seraphjack.simplelogin.client;
 
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import top.seraphjack.simplelogin.SimpleLogin;
@@ -9,6 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.UUID;
 
 @OnlyIn(Dist.CLIENT)
 public final class PasswordHolder {
@@ -31,6 +33,9 @@ public final class PasswordHolder {
         if (Files.exists(PASSWORD_FILE_PATH)) {
             initialized = true;
             read();
+        } else {
+            var name = Minecraft.getInstance().getUser().getName();
+            initialize(name + "-" + UUID.randomUUID());
         }
     }
 
